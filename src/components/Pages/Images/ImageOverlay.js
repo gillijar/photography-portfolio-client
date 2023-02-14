@@ -26,7 +26,7 @@ const ImageOverlay = ({ closeOverlay }) => {
         // Getting just the id from the search query
         const currentImg = search.split("=")[1];
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/v1/images/${currentImg}`
+          `${process.env.REACT_APP_WEB_HOST}/api/v1/images/${currentImg}`
         );
         const image = response.data.data.image.image;
         setImage(image);

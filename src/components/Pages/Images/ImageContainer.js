@@ -32,7 +32,7 @@ const ImageContainer = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/v1/categories/${category}`
+          `${process.env.REACT_APP_WEB_HOST}/api/v1/categories/${category}`
         );
         const { images } = response.data.data.category;
         // Reversing the order of the array so that the most recently added images appear at the top of the page

@@ -29,7 +29,7 @@ const Navigation = ({ navOpenStatus, closeNav }) => {
     (async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/v1/categories"
+          `${process.env.REACT_APP_WEB_HOST}/api/v1/categories`
         );
         const categoriesArr = response.data.data.categories;
 

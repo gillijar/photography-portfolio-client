@@ -27,7 +27,7 @@ const StoreItem = ({ closeOverlay }) => {
         // Isolating the information we need to pass into the response. Ex. ?img=6135sd6fa161 => 6135sd6fa161
         const itemQuery = search.split("=")[1];
         const response = await axios.get(
-          `http://127.0.0.1:8000/api/v1${pathname}/${itemQuery}`
+          `${process.env.REACT_APP_WEB_HOST}/api/v1${pathname}/${itemQuery}`
         );
         const item = response.data.data.item;
         setItem(item);

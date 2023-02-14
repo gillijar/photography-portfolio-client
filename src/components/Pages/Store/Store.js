@@ -17,7 +17,9 @@ const Shop = () => {
     (async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://127.0.0.1:8000/api/v1/store`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_WEB_HOST}/api/v1/store`
+        );
         const items = response.data.data.items;
         setItems(items);
       } catch (err) {
